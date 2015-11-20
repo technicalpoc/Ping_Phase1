@@ -96,7 +96,31 @@
             <artifactId>archaius-core</artifactId>
         </dependency>
     </dependencies>
-    <build>
+    
+     <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.spotify</groupId>
+                    <artifactId>docker-maven-plugin</artifactId>
+                    <version>0.2.9</version>
+                    <configuration>
+                        <skipDockerBuild>true</skipDockerBuild>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+    
+    
+<!--     
+	<build>
         <plugins>
             <plugin>
                 <groupId>com.spotify</groupId>
@@ -126,4 +150,6 @@
             </plugin>
         </plugins>
     </build>
-</project>
+ -->
+ 
+ </project>
