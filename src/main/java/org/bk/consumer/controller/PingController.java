@@ -16,6 +16,13 @@ public class PingController {
     @Qualifier("hystrixPongClient")
     private PongClient pongClient;
 
+    
+    /**
+     * http://rashmitr:8080/
+     * curl -X POST http://localhost:8080/refresh -- To get refreshed configuration from DynamicConfig server
+     * 
+     */
+    
     @RequestMapping("/dispatch")
     public MessageAcknowledgement sendMessage(@RequestBody Message message) {
         return this.pongClient.sendMessage(message);
