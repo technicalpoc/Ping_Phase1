@@ -23,7 +23,7 @@ public class HystrixWrappedPongClient implements PongClient {
 			System.out.println("message.getPayload() : " + message.getPayload());
 			m = this.feignPongClient.sendMessage(message);
 		} catch (Exception e) {
-			System.out.println("== Exception in HystrixWrappedPongClient ==");
+			System.out.println("=== Exception in HystrixWrappedPongClient ===");
 			e.printStackTrace();
 		}
 		return m;
